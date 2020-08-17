@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/lingualytics/static/css/main.5f361e03.chunk.css",
-    "main.js": "/lingualytics/static/js/main.4c122e04.chunk.js",
-    "main.js.map": "/lingualytics/static/js/main.4c122e04.chunk.js.map",
+    "main.js": "/lingualytics/static/js/main.8e27c494.chunk.js",
+    "main.js.map": "/lingualytics/static/js/main.8e27c494.chunk.js.map",
     "runtime-main.js": "/lingualytics/static/js/runtime-main.1d106745.js",
     "runtime-main.js.map": "/lingualytics/static/js/runtime-main.1d106745.js.map",
     "static/js/2.56eaa85b.chunk.js": "/lingualytics/static/js/2.56eaa85b.chunk.js",
     "static/js/2.56eaa85b.chunk.js.map": "/lingualytics/static/js/2.56eaa85b.chunk.js.map",
     "index.html": "/lingualytics/index.html",
-    "precache-manifest.5820a755580bcb0706a447e2a27930bb.js": "/lingualytics/precache-manifest.5820a755580bcb0706a447e2a27930bb.js",
+    "precache-manifest.86bbb8473dfa54760422aabf480c46f5.js": "/lingualytics/precache-manifest.86bbb8473dfa54760422aabf480c46f5.js",
     "service-worker.js": "/lingualytics/service-worker.js",
     "static/css/main.5f361e03.chunk.css.map": "/lingualytics/static/css/main.5f361e03.chunk.css.map",
     "static/js/2.56eaa85b.chunk.js.LICENSE.txt": "/lingualytics/static/js/2.56eaa85b.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.1d106745.js",
     "static/js/2.56eaa85b.chunk.js",
     "static/css/main.5f361e03.chunk.css",
-    "static/js/main.4c122e04.chunk.js"
+    "static/js/main.8e27c494.chunk.js"
   ]
 }
