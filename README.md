@@ -29,5 +29,5 @@ That's it now you just need to start your react application, from your command l
 # Run
 $ npm start
 ```
-## License
+## ⚖️ License
 MIT
