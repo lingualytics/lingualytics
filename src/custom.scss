@@ -1,0 +1,118 @@
+$primary: #1696e7;
+$secondary: #4A4A48;
+$success: #566246;
+$info: #52c8fa;
+$warning: #FE4A49;
+$danger: #FE4A49;
+$light: #f8f9fa;
+$dark: #464d65;
+$btn-focus-box-shadow: none !important;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+@import '~bootstrap/scss/bootstrap';
+
+* {
+  transition-duration: 300ms;
+}
+
+body,
+html {
+  font-family: 'Montserrat', sans-serif;
+  scroll-behavior: smooth;
+}
+
+.no-decoration:hover {
+  text-decoration: none !important;
+}
+
+.no-list>li {
+  list-style: none;
+  font-size: 0.8rem;
+  padding-top: 0.2rem;
+}
+
+textarea:focus,
+textarea.form-control:focus,
+input.form-control:focus,
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus,
+input[type=number]:focus,
+[type=text].form-control:focus,
+[type=password].form-control:focus,
+[type=email].form-control:focus,
+[type=tel].form-control:focus,
+[contenteditable].form-control:focus {
+  box-shadow: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: #072366 !important;
+}
+
+.form-control {
+  border-radius: 0;
+  border: none;
+  border-bottom: 3px solid rgba(7, 35, 102, 0.1);
+  background-color: transparent;
+}
+
+.form-control::placeholder {
+  color: transparent;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-control,
+.floating-label {
+  line-height: 1;
+  font: inherit;
+  padding: 1em;
+  padding-left: 0.5em;
+  height: 3em;
+}
+
+.floating-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  user-select: none;
+  z-index: 99;
+  transition: transform .25s, opacity .25s ease-in-out;
+  transform-origin: 0 0;
+  opacity: 0.9;
+  color: rgba(7, 35, 102, 0.9);
+}
+
+.form-control:focus,
+.form-control:not(:placeholder-shown) {
+  border-color: rgba(7, 35, 102, 0.3)
+}
+
+.form-control:focus+.floating-label,
+.form-control:not(:placeholder-shown)+.floating-label {
+  transform: translate(1%, -40%) scale(.8);
+  opacity: .7;
+}
+
+#messageContact {
+  resize: none;
+}
+
+.hidden {
+  opacity: 1;
+  transition: opacity 0.2s cubic-bezier(.17, .67, .69, .91);
+}
+
+.hidden.hide {
+  opacity: 0;
+}

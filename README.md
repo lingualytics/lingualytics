@@ -1,68 +1,61 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# LINGUALYTICS
+![Build and Deploy](https://github.com/lingualytics/website/workflows/Build%20and%20Deploy/badge.svg?branch=master)
+![Events](https://img.shields.io/github/issues/lingualytics/website/event?color=green&label=events)
+## 🚀 Super fast setup
+Run the code locally for testing and development purposes by following steps mentioned below.
 
-## Available Scripts
+You'll need [git](https://git-scm.com) and [node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer
+```
+node@v10.16.0 or higher
+npm@6.9.0 or higher
+git@2.17.1 or higher
+```
 
-In the project directory, you can run:
+### 1. From your command line, clone and run the repo:
+```bash
+# Clone this repository
+$ git clone https://github.com/lingualytics/lingualytics.git
 
-### `npm start`
+# Go into the repository
+$ cd website
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Install dependencies
+$ npm install
+```
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### 2. Generate a Github Personal Access Token
+Generate a Github personal access token using these [instructions](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line)
 
-### `npm test`
+`Note: Make sure you don't select any scope just generate a simple token without any scope`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+After that copy your generated token and then encode your token into base 64 using this [website](http://www.utilities-online.info/base64/)
 
-### `npm run build`
+`Note: Save your base64 converted token for next step`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 3. Change `/src/config.js`
+Go to your cloned repository and make the following changes in `/src/config.js`
+```javascript
+export const config = {
+  githubConvertedToken: "Your token here",
+  githubUserName: "Your username here",
+  githubRepo: "Your issues repo name here",
+  title : "Title of your site",
+  description: "Your meta description"
+};
+```
+### 4. Write content
+After doing following changes now you just need to write an issue on repository that you have mentioned in your `config.js`
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- Open your repository [github issues](https://github.com/kalyanisamriddhi/website/issues)
+- Create a new issue 
+- Now write your content in github issue in markdown. You can also use [SlackEdit](https://stackedit.io/app#) or [Dillinger](https://dillinger.io/) to write your markdown
+- Add a label `event` on your github issue to make it different from other standard issues. Keep in mind `event` label is mandatory otherwise it won't show on the website
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### 5. **Start Your React App.**
+That's it now you just need to start your react application, from your command line run
+```bash
+# Run
+$ npm start
+```
+## License
+MIT
