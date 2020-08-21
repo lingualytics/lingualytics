@@ -3,7 +3,7 @@ import Icon from "@mdi/react";
 import { Col, Card, CardHeader } from "reactstrap";
 import styled from "styled-components";
 
-const AboutCard = ({ icon, title, text, isLight }) => {
+const AboutCard = ({ icon, title, text, isLight, moreBtn }) => {
 
   return (
     <Col className="my-4" sm="12" lg="3" style={{ minHeight: "400px" }}>
@@ -15,9 +15,10 @@ const AboutCard = ({ icon, title, text, isLight }) => {
           <h4 className={`${isLight ? "text-dark" : "text-white"} font-weight-bold mb-3`}>
             {title}
           </h4>
-          <p className={`mb-0 ${isLight ? "text-secondary" : "text-white"}`}>
+          <p className={`mb-4 ${isLight ? "text-secondary" : "text-white"}`}>
             {text}
           </p>
+          {moreBtn}
         </div>
       </CustomCard>
     </Col>

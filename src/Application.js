@@ -10,6 +10,7 @@ const Application = () => {
         <title>LINGUALYTICS</title>
         <meta charSet="utf-8" />
         <meta name="description" content="LINGUALYTICS" />
+        <meta name="author" content="avisionx | Avi Garg" />
         <meta name="theme-color" content="#52c8fa" />
       </Helmet>
       <Router />

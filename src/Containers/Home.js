@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import Icon from "@mdi/react";
 import { Button, Container, Col, Row } from 'reactstrap'
-import { mdiBookOpenPageVariant, mdiFoodApple, mdiHospitalBox, mdiMapMarker, mdiPhone, mdiEmail } from '@mdi/js';
+import { mdiMagnify, mdiLanguagePython, mdiBrain, mdiFacebook, mdiTwitter, mdiInstagram, mdiGithub, mdiLinkedin, mdiBlogger } from '@mdi/js';
 import AboutCard from "../Components/AboutCard";
 import styled from "styled-components";
 import heroImg from '../img/hero-img.png';
@@ -11,35 +11,63 @@ import { Link } from "react-router-dom";
 
 const contactArray = [
   {
-    icon: mdiMapMarker,
-    title: "Kalyani Solvex",
-    text: "Sudarshanpur, Raiganj, Uttar Dinajpur, West Bengal - 733134"
+    icon: mdiFacebook,
+    title: "Facebook",
+    text: "https://www.facebook.com/lingualytics"
   }, {
-    icon: mdiPhone,
-    title: "+91 9733008834",
-    text: "Mon to Fri 10am to 6pm"
+    icon: mdiTwitter,
+    title: "Twitter",
+    text: "https://twitter.com/lingualytics"
   }, {
-    icon: mdiEmail,
-    title: "contact@kalyanisamriddhi.com",
-    text: "Send us an email anytime!"
+    icon: mdiInstagram,
+    title: "Instagram",
+    text: "https://www.instagram.com/lingualytics/"
+  }, {
+    icon: mdiGithub,
+    title: "Github",
+    text: "https://github.com/lingualytics/"
+  }, {
+    icon: mdiLinkedin,
+    title: "LinkedIn",
+    text: "https://www.linkedin.com/company/lingualytics/about/"
+  }, {
+    icon: mdiBlogger,
+    title: "Medium",
+    text: "https://medium.com/lingualytics"
   }
 ]
 
 const aboutArray = [
   {
-    icon: mdiBookOpenPageVariant,
-    title: "Educational Scholarship",
-    text: "To ensure that the financially burdened are not deprived of an educational qualification, we provide scholarships to assist them."
+    icon: mdiMagnify,
+    title: "Analysis Web App",
+    text: "Checkout our web app which analyses the sentiment of anything you type!",
+    btn: 
+    <Link to="/demo">
+      <Button className="rounded-0 px-4" color="primary" size="lg">
+        Know More!
+      </Button>
+    </Link>
   },
   {
-    icon: mdiHospitalBox,
-    title: "Medical Facilities",
-    text: "By providing monetary funds to patients, we want every human to have access to all medical facilities required for their treatment."
+    icon: mdiLanguagePython,
+    title: "Py-Lingualytics",
+    text: "A python package which has all the tools to work with code-switched data!",
+    btn: <a href="https://github.com/lingualytics/py-lingualytics" target="_blank" rel="noopener noreferrer">
+            <Button className="rounded-0 px-4" color="primary" size="lg">
+              Know More!
+            </Button>
+          </a>
   },
   {
-    icon: mdiFoodApple,
-    title: "Clean Water & Food",
-    text: "We serve to ensure basic amenities like clean food and water are available to all community members."
+    icon: mdiBrain,
+    title: "Huggingface Models",
+    text: "We have uploaded our models for free use on huggingface, check them out!",
+    btn: <a href="https://huggingface.co/rohanrajpal" target="_blank" rel="noopener noreferrer">
+            <Button className="rounded-0 px-4" color="primary" size="lg">
+              Know More!
+            </Button>
+          </a>
   }
 ]
 
@@ -116,9 +144,9 @@ const Home = () => {
         <Container fluid className="h-100 d-flex align-items-center">
           <Row className="w-100">
             <Col sm="12" lg={{ offset: 1, size: 8 }}>
-              <h1 className="text-info display-5 font-weight-bold mb-0">Heading 1</h1>
-              <h1 className="text-primary display-4 font-weight-bold mb-2">Heading 2is asf</h1>
-              <p className="mb-4 text-secondary">Helper line text explain msg</p>
+              <h1 className="text-info display-5 font-weight-bold mb-0">Hi there!</h1>
+              <h1 className="text-primary font-weight-bold mb-2 text-uppercase" style={{fontSize: '3rem'}}>Lingualytics</h1>
+              <p className="mb-4 text-secondary">Democratizing NLP by understanding a mix of languages</p>
               <Link to="/demo">
                 <Button className="rounded-0 px-4" color="primary" size="lg">
                   Live Demo!
@@ -133,14 +161,14 @@ const Home = () => {
           <Row>
             <Col className="d-flex justify-content-center flex-column" sm="12" lg={{ offset: 1, size: 5 }}>
               <h5 className="text-info font-weight-bold mb-2">About Us</h5>
-              <h1 className="text-primary font-weight-bold mb-2">We Are On A Mission To Do Something</h1>
-              <p className="text-secondary mb-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-              <p className="text-secondary mb-4">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
-              <Link to="/#features">
+              <h1 className="text-primary font-weight-bold mb-2">We Are On A Mission To Democratize NLP</h1>
+              <p className="text-secondary mb-2 pr-lg-4">Did you know that Indians/Spaniards usually don't talk in just one language? They usually use two or more languages when texting or talking, which is usually English mixed with their native language. This mixing is called code-mixing.</p>
+              <p className="text-secondary mb-4 pr-lg-4">All of the NLP analytics companies perform well on only one language, <b>we are developing models and tools to understand these mix of languages.</b> Help us understand how the world types by filling this form below.</p>
+              <a href="https://rohanrajpal.typeform.com/to/ltOXIigW" target="_blank" rel="noopener noreferrer">
                 <Button className="rounded-0 px-4" color="primary" size="lg">
-                  Know More!
+                  Contribute!
                 </Button>
-              </Link>
+              </a>
             </Col>
             <Col className="text-center mt-4 mt-lg-0 d-flex align-items-center" sm="12" lg="5">
               <AboutImg src={aboutImg} alt="" />
@@ -154,12 +182,12 @@ const Home = () => {
             <Row>
               <Col className="text-center" sm="12" md={{ offset: 2, size: 8 }} lg={{ offset: 3, size: 6 }}>
                 <h5 className="text-info font-weight-bold mb-1">Our Features</h5>
-                <h1 className="text-primary font-weight-bold mb-4">Our 3 Primary Features XYZ</h1>
+                <h1 className="text-primary font-weight-bold mb-4">Our 3 Primary Features</h1>
               </Col>
           </Row>
             <Row className="justify-content-center">
               {aboutArray.map((data, i) => {
-                return <AboutCard title={data.title} icon={data.icon} text={data.text} isLight={i % 2 === 0} key={i} />;
+                return <AboutCard title={data.title} icon={data.icon} text={data.text} isLight={i % 2 === 0} key={i} moreBtn={data.btn} />;
               })}
             </Row>
           </Container>
@@ -195,13 +223,13 @@ const Home = () => {
                 </form>
               </Col>
               <Col sm="12" lg={{ offset: 1, size: 4 }} className="mt-5 mt-lg-0">
+              <h3 className="font-weight-bold text-info">Social Media</h3>
                 {contactArray.map((data, i) => {
                   return (
                     <div className="media" key={i}>
                       <span><Icon path={data.icon} color="#464d65" size={1} /></span>
-                      <div className="media-body ml-2">
-                        <h5 className="mb-0 text-primary font-weight-light">{data.title}</h5>
-                        <p className="mb-4 text-secondary pr-5">{data.text}</p>
+                      <div className="media-body ml-2 mb-3">
+                        <a href={data.text} className="text-primary h5 font-weight-light">{data.title}</a>
                       </div>
                     </div>
                   );
