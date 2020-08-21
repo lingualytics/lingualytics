@@ -16,6 +16,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "apollo-boost": "^0.4.7",
+    "axios": "^0.20.0",
     "bootstrap": "^4.5.0",
     "dotenv": "^8.2.0",
     "gh-pages": "^2.2.0",
