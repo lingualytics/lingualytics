@@ -27,6 +27,9 @@ const NavBar = () => {
                         <NavItem className="d-flex align-items-center pr-2 mr-3 py-1">
                             <CustomNavLink to="/#features" className="text-primary">Features</CustomNavLink>
                         </NavItem>
+                        <NavItem className="d-flex align-items-center pr-2 mr-3 py-1">
+                            <CustomNavLink to="/#team" className="text-primary">Team</CustomNavLink>
+                        </NavItem>
                         <NavItem className="d-flex align-items-center pr-2 mr-2 py-1">
                             <CustomLink href="https://github.com/lingualytics/lingualytics" target="_blank" className="text-primary">Docs</CustomLink>
                         </NavItem>

@@ -7,7 +7,23 @@ import styled from "styled-components";
 import heroImg from '../img/hero-img.png';
 import aboutImg from '../img/yt-placeholder.jpg';
 import { Link } from "react-router-dom";
+import aviImg from '../img/avi.jpg';
+import rohanImg from '../img/rohan.jpg';
+import royalImg from '../img/royal.jpg';
 
+
+const teamArray = [
+  {
+    img: aviImg,
+    name: "Avi Garg"
+  }, {
+    img: rohanImg,
+    name: "Rohan Rajpal"
+  }, {
+    img: royalImg,
+    name: "Royal Tomar"
+  }, 
+]
 
 const contactArray = [
   {
@@ -77,6 +93,7 @@ const Home = () => {
 
   const homeRef = useRef(null)
   const aboutRef = useRef(null)
+  const teamRef = useRef(null)
   const featuresRef = useRef(null)
   const contactRef = useRef(null) 
 
@@ -93,6 +110,9 @@ const Home = () => {
           break;
         case "contact": 
           scrollToRef(contactRef);
+          break;
+        case "team": 
+          scrollToRef(teamRef);
           break;
         default: 
         scrollToRef(homeRef);
@@ -193,8 +213,29 @@ const Home = () => {
           </Container>
         </div>
       </Container>
+      <div style={{ background: "rgba(232, 245, 253, 0.32)", padding: "90px 0" }} ref={teamRef}>
+        <Container fluid>
+          <Row>
+              <Col className="text-center" sm="12" md={{ offset: 2, size: 8 }} lg={{ offset: 3, size: 6 }}>
+                <h5 className="text-info font-weight-bold mb-1">Our Team</h5>
+                <h1 className="text-primary font-weight-bold mb-4">A Team On Mission</h1>
+              </Col>
+          </Row>
+          <Row className="justify-content-start mt-3">
+            <Col sm="0" lg={{offset: 1}} ></Col>
+            {teamArray.map((data, i) => {
+              return (
+                <Col key={i} sm="6" lg={{ offset: 1, size: 2 }} className="text-center">
+                  <TeamImg src={data.img} alt="" className="rounded-circle img-fluid shadow" />
+                  <h5 className="text-primary mt-3 mb-5 mb-lg-0">{data.name}</h5>
+                </Col>
+              );
+            })}
+          </Row>
+        </Container>
+      </div>
       <Container fluid>
-        <div style={{ padding: "0 0 90px 0" }} ref={contactRef}>
+        <div style={{ padding: "90px 0" }} ref={contactRef}>
         <Row>
           <Col className="text-center" sm="12">
             <h1 className="text-primary font-weight-bold mb-4">Contact Us</h1>
@@ -229,7 +270,7 @@ const Home = () => {
                     <div className="media" key={i}>
                       <span><Icon path={data.icon} color="#464d65" size={1} /></span>
                       <div className="media-body ml-2 mb-3">
-                        <a href={data.text} className="text-primary h5 font-weight-light">{data.title}</a>
+                        <a href={data.text} target="_blank" rel="noopener noreferrer" className="text-primary h5 font-weight-light">{data.title}</a>
                       </div>
                     </div>
                   );
@@ -250,11 +291,17 @@ const LandingHome = styled.div`
   background-position: center center;
   background-size: cover;
 `
+const TeamImg = styled.img`
+width: 100%;
+@media (max-width: 991.98px) { 
+  width: 75%;
+}
+`
 
 const AboutImg = styled.img`
-  @media (max-width: 991.98px) { 
-    width: 100%;
-  }
+@media (max-width: 991.98px) { 
+  width: 100%;
+}
 `
 
 export default Home;

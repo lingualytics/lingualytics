@@ -49,6 +49,7 @@ const Footer = () => {
                         <ListGroup className="no-list">
                             <li><FooterLink to="/#about"> About</FooterLink></li>
                             <li><FooterLink to="/#features"> Features</FooterLink></li>
+                            <li><FooterLink to="/#team"> Team</FooterLink></li>
                             <li><FooterLink to="/#contact">Contact</FooterLink></li>
                             <li><FooterLink to="/demo">Demo</FooterLink></li>
                         </ListGroup>
@@ -58,7 +59,7 @@ const Footer = () => {
                         <ListGroup className="no-list d-flex flex-row font-weight-light">
                             {contactArray.map((data, i) => {
                                 return (
-                                    <li key={i} className="mr-1"><a href={data.text} className="text-primary h5 font-weight-light pr-1"><Icon path={data.icon} color="white" size={1} /></a></li>
+                                    <li key={i} className="mr-1"><a href={data.text} target="_blank" rel="noopener noreferrer" className="text-primary h5 font-weight-light pr-1"><Icon path={data.icon} color="white" size={1} /></a></li>
                                 );
                             })}
                         </ListGroup>
