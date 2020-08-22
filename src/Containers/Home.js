@@ -1,27 +1,71 @@
 import React, { useEffect, useState, useRef } from "react";
 import Icon from "@mdi/react";
-import { Button, Container, Col, Row } from 'reactstrap'
+import { Button, Container, Col, Row, ListGroup, Modal, ModalBody } from 'reactstrap'
 import { mdiMagnify, mdiLanguagePython, mdiBrain, mdiFacebook, mdiTwitter, mdiInstagram, mdiGithub, mdiLinkedin, mdiBlogger } from '@mdi/js';
 import AboutCard from "../Components/AboutCard";
 import styled from "styled-components";
 import heroImg from '../img/hero-img.png';
-import aboutImg from '../img/yt-placeholder.jpg';
+import aboutImg from '../img/yt-placeholder-img.png';
 import { Link } from "react-router-dom";
 import aviImg from '../img/avi.jpg';
 import rohanImg from '../img/rohan.jpg';
 import royalImg from '../img/royal.jpg';
 
-
 const teamArray = [
   {
     img: aviImg,
-    name: "Avi Garg"
+    name: "Avi Garg",
+    social: [
+      {
+        icon: mdiGithub,
+        url: "https://github.com/avisionx"
+      }, {
+        icon: mdiLinkedin,
+        url: "https://www.linkedin.com/in/avisionx"
+      }, {
+        icon: mdiFacebook,
+        url: "https://www.facebook.com/avisionx"
+      }, {
+        icon: mdiInstagram,
+        url: "https://instagram.com/avisionx"
+      }
+    ]
   }, {
     img: rohanImg,
-    name: "Rohan Rajpal"
+    name: "Rohan Rajpal",
+    social: [
+      {
+        icon: mdiGithub,
+        url: "https://github.com/rohanrajpal"
+      }, {
+        icon: mdiLinkedin,
+        url: "https://www.linkedin.com/in/rohanrajpal"
+      }, {
+        icon: mdiFacebook,
+        url: "https://www.facebook.com/rohanrajpal1"
+      }, {
+        icon: mdiInstagram,
+        url: "https://instagram.com/rohan__rajpal"
+      }
+    ]
   }, {
     img: royalImg,
-    name: "Royal Tomar"
+    name: "Royal Tomar",
+    social: [
+      {
+        icon: mdiGithub,
+        url: "https://github.com/tomaroyal"
+      }, {
+        icon: mdiLinkedin,
+        url: "https://www.linkedin.com/in/tomaroyal"
+      }, {
+        icon: mdiFacebook,
+        url: "https://www.facebook.com/rtomar1999"
+      }, {
+        icon: mdiInstagram,
+        url: "https://instagram.com/tomaroyal"
+      }
+    ]
   }, 
 ]
 
@@ -96,6 +140,19 @@ const Home = () => {
   const teamRef = useRef(null)
   const featuresRef = useRef(null)
   const contactRef = useRef(null) 
+  const videoLink = "https://www.youtube.com/embed/NqzBkihsYPE";
+  const [modal, setModal] = useState(false);
+  const [videoSrc, setVideoSrc] = useState(videoLink);
+
+  const toggle = () => {
+    if(modal) {
+      setVideoSrc(videoLink);
+    }
+    else {
+      setVideoSrc( videoLink + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0" );
+    }
+    setModal(!modal)
+  };
 
   useEffect(() => {
     let tab = window.location.hash.split("#");
@@ -191,7 +248,7 @@ const Home = () => {
               </a>
             </Col>
             <Col className="text-center mt-4 mt-lg-0 d-flex align-items-center" sm="12" lg="5">
-              <AboutImg src={aboutImg} alt="" />
+              <AboutImg src={aboutImg} alt="" className="shadow hoverPointer" onClick={toggle} />
             </Col>
           </Row>
         </Container>
@@ -227,7 +284,14 @@ const Home = () => {
               return (
                 <Col key={i} sm="6" lg={{ offset: 1, size: 2 }} className="text-center">
                   <TeamImg src={data.img} alt="" className="rounded-circle img-fluid shadow" />
-                  <h5 className="text-primary mt-3 mb-5 mb-lg-0">{data.name}</h5>
+                  <h5 className="text-primary h4 mt-3 mb-0">{data.name}</h5>
+                  <ListGroup className="no-list d-flex flex-row font-weight-light justify-content-center mb-5 mb-lg-0">
+                      {data.social.map((links, index) => {
+                          return (
+                              <li key={index} className="mx-1"><a href={links.url} target="_blank" rel="noopener noreferrer" className="text-primary h5 font-weight-light px-1"><Icon path={links.icon} color="rgb(70, 77, 101)" size={1.1} /></a></li>
+                          );
+                      })}
+                  </ListGroup>
                 </Col>
               );
             })}
@@ -277,9 +341,18 @@ const Home = () => {
                 })}
               </Col>
             </Row>
-            
           </div>
       </Container>
+      <Modal isOpen={modal} centered size="lg" toggle={toggle}>
+        <ModalBody className="p-0">
+          <button type="button" className="close no-btn-shadow" onClick={toggle}>
+              <span>&times;</span>
+          </button>        
+          <div className="embed-responsive embed-responsive-16by9">
+              <iframe className="embed-responsive-item" src={videoSrc} title="YT-Lingualytics" allowFullScreen allowscriptaccess="always" allow="autoplay"></iframe>
+          </div>   
+        </ModalBody>
+      </Modal>
     </>
   );
 }
