@@ -31,7 +31,7 @@ const NavBar = () => {
                             <CustomNavLink to="/#team" className="text-primary">Team</CustomNavLink>
                         </NavItem>
                         <NavItem className="d-flex align-items-center pr-2 mr-2 py-1">
-                            <CustomLink href="https://github.com/lingualytics/lingualytics" target="_blank" className="text-primary">Docs</CustomLink>
+                            <CustomLink href="https://lingualytics.github.io/py-lingualytics/" target="_blank" className="text-primary">Docs</CustomLink>
                         </NavItem>
                         <NavItem className="d-flex align-items-center pr-2 mr-2 py-1">
                             <CustomNavLink to="/#contact" className="text-primary">Contact</CustomNavLink>
